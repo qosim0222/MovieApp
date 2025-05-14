@@ -7,12 +7,12 @@ const Genres = ({ setGenre }) => {
 
   return (
     <div className='container mx-auto py-4'>
-      <div className='flex overflow-auto cursor-pointer gap-2'>
+      <div className='flex overflow-auto cursor-pointer gap-2 no-scrollbar'>
         {data?.genres?.map((genre) => (
           <div
             onClick={() => setGenre(genre.id.toString())}
             key={genre.id}
-            className="p-2 bg-gray-100 rounded mb-2 text-nowrap select-none hover:bg-gray-300 transition"
+            className="p-1.5 bg-[#232323]  rounded-2xl mb-3 text-nowrap select-none hover:bg-gray-700 transition text-white"
           >
             {genre.name}
           </div>

@@ -6,7 +6,7 @@ const Card = ({item}) => {
   return (
     <div className='flex flex-col gap-3  '>
         <div className='rounded-[12px] overflow-hidden'>
-            <img onClick={()=>navigate(`/movie/${item.id}`)} className='h-[420px] object-cover' loading='lazy' src={url + item.poster_path} alt="" /></div>        
+            <img onClick={()=>navigate(`/movie/${item.id}`)} className=' object-cover' loading='lazy' src={url + item.poster_path} alt="" /></div>        
         <div>
             <h3>{item.title}</h3>
             <p>{item.vote_average}</p>
