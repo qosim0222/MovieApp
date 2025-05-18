@@ -14,7 +14,7 @@ const Genres = ({  handleChangeGenre, genres }) => {
           onClick={() => handleChangeGenre(genre.id.toString())}
           className={`${
             array.includes(genre.id.toString()) ? "p-1.5 bg-amber-600 text-white" : ""
-          } text-nowrap cursor-pointer select-none px-4 p-1.5 bg-[#232323]  rounded-2xl mb-3    transition text-white`}
+          } text-nowrap cursor-pointer select-none px-4 p-1.5 bg-[#232323]  rounded-2xl mb-3 hover:opacity-80   transition text-white`}
           key={genre.id}
         >
           {genre.name}

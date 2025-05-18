@@ -22,10 +22,6 @@ const Movies = () => {
       genres += `-${id}`
     }
 
-    // if(value==1){
-    //   params.delete("page")
-    // }
-
 
 
     if (!genres) {
@@ -37,10 +33,15 @@ const Movies = () => {
     setParams(params)
   }, [])
 
-  const handleChange = (event, value) => {
-    params.set("page", value.toString())
+  const handleChange = (event , value) => {
+    if(value === 1){
+      params.delete("page")
+    }else{
+      params.set("page", value.toString())
+    }
     setParams(params)
   }
+
   return (
     <div>
       <Genres genres={genres} handleChangeGenre={handleChangeGenre} />
@@ -48,7 +49,7 @@ const Movies = () => {
 
       <div className='container mx-auto flex justify-center my-10 '>
         <Pagination count={data?.total_pages > 500 ? 500 : data?.total_pages} page={Number(page)} onChange={handleChange}
-          sx={{ '& .MuiPaginationItem-root': { color: 'white' }, }} />
+          sx={{ '& .MuiPaginationItem-root': { color: "white" }, }} />
       </div>
     </div>
   )
