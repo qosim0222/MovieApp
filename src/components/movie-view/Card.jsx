@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { AiFillStar } from 'react-icons/ai' 
+import { AiFillStar } from 'react-icons/ai'
 import { FaBookmark, FaRegBookmark } from "react-icons/fa"
 import { useStateValue } from '@/context'
 
@@ -11,16 +11,16 @@ const Card = ({ item }) => {
   return (
     <div className="flex flex-col gap-3 bg-[#2c292b] p-1 rounded-xl shadow-md hover:shadow-lg transition duration-300 ">
 
-       <div className='relative border rounded-lg overflow-hidden cursor-pointer group'>
+      <div className='relative  rounded-lg overflow-hidden cursor-pointer group'>
         <img onClick={() => navigate(`/movie/${item.id}`)} className='w-full  object-cover transition-transform duration-300 group-hover:scale-[103%] ' loading='lazy' src={url + item.poster_path} alt="" />
         <button
           onClick={() => dispatch({ type: "SAVED", payload: item })}
           className="absolute top-2 right-2 z-10 p-2"
         >
           {state.saved.some(({ id }) => id === item.id) ? (
-            <FaBookmark className='text-red-700 cursor-pointer' />
+            <FaBookmark className='text-red-500 cursor-pointer' />
           ) : (
-            <FaRegBookmark className='cursor-pointer '  />
+            <FaRegBookmark className=' text-amber-600 cursor-pointer' />
           )}
         </button>
 
@@ -38,6 +38,11 @@ const Card = ({ item }) => {
 }
 
 export default React.memo(Card)
+
+
+
+
+
 
 
 //  <div className="rounded-lg overflow-hidden cursor-pointer group"
